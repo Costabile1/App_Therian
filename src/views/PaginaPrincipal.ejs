@@ -1,0 +1,63 @@
+
+
+<title>MAPA</title>
+<% head = `
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+
+    <link rel="stylesheet"
+          href="/css/PaginaPrincipal.css">
+
+    
+` %>
+
+    <div id="mi_mapa"></div>
+
+    <div id="confi_layer" >
+        <h2>Configurar Punto</h2>
+        <form id="formularioEvento" method="get" action="../Principal/Guardar">
+            <label>
+                Agrege un Nombre:
+                <input type="text" name="nombre">
+            </label>
+
+            <label>
+                
+            </label>
+
+            <label>
+                <div class="slider-container">
+                    <label for="transparencia">Opacidad del Marcador: <span id="val_slider">50</span>%</label>
+                    <input type="range" id="mi_slider" name="radius" min="0" max="300" value="50" class="styled-slider" onchange="actualizarTamaño()">
+                </div>
+            </label>
+            <label for="arch01">Foto de Perfil:
+                <input type="file" name="imagen" id="arch01" />
+            </label><br>
+
+            <label>
+                descripcion
+                <input type="text" name="descripcion">
+            </label>
+
+            <label>
+                <input type="reset" value="Restablecer" class="btn-reset">
+                <input type="submit"  value="Subir" class="btn-save">
+            </label>
+            <input id="lat" value=0 type="hidden" name="latitud">
+            <input id="lng" value=0 type="hidden" name="longitud">
+        </form>
+    </div>
+
+
+
+
+<% scripts = `
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="/js/mapa.js"></script>
+` %>
