@@ -1,7 +1,11 @@
-
-
-<title>MAPA</title>
-<% head = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
@@ -11,10 +15,53 @@
     <link rel="stylesheet"
           href="/css/PaginaPrincipal.css">
 
-    
-` %>
+    <title>Mapa Interactivo - Menú</title>
 
-    <div id="mi_mapa"></div>
+</head>
+<body>
+
+    <nav class="map-menu">
+        <div class="menu-section logo">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>GeoExplorer</span>
+        </div>
+
+        <div class="menu-section search-bar">
+            <input type="text"  id="searchInput" placeholder="Buscar lugares, direcciones..." onkeydown="buscador()" value="" onkeydown="BuscarCordenadas()">
+            <div id="results"></div>
+            <button><i class="fas fa-search" onclick="BuscarCordenadas()"></i></button>
+        </div>
+
+        <div class="menu-section nav-links">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-layer-group"></i>Capas
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-route"></i>Rutas
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bookmark"></i>Guardados
+            </a>
+        </div>
+
+        <div class="menu-section auth-buttons">
+            <!--
+            {% if session.get("email")%}
+                <a>Estas logeado</a>
+                <img srs="" href="#">
+            {% else%}
+                <a href="../Login" class="btn-login">Ingresar</a>
+                <a href="../Registro" class="btn-signup">Registrarse</a>
+            {% endif%}
+             -->
+
+             <a href="/Login" class="btn-login">Ingresar</a>
+                <a href="/Registro" class="btn-signup">Registrarse</a>
+        </div>
+    </nav>
+
+    <!-- MAPAAA   ---------------------------->
+     <div id="mi_mapa"></div>
 
     <div id="confi_layer" >
         <h2>Configurar Punto</h2>
@@ -53,11 +100,9 @@
     </div>
 
 
+</body>
 
-
-<% scripts = `
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 <script src="/js/mapa.js"></script>
-` %>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | MapSystem</title>
+    <link rel="stylesheet" href="css/Registro.css">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="fas fa-user-circle"></i>
+                <h1>Bienvenido</h1>
+                <p>Ingresa tus credenciales para acceder al mapa</p>
+            </div>
+
+            <form action="../Login/Guardar" method="POST" class="auth-form">
+                <div class="input-group">
+                    <label for="email">Usuario o Email</label>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="password">Contraseña</label>
+                        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Recordarme
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>¿No tienes cuenta? <a href="../Registro">Regístrate gratis</a></p>
+                <a href="../home" class="back-link"><i class="fas fa-arrow-left"></i> Volver al Mapa</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
